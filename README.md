@@ -11,6 +11,6 @@
 6）node start.js  
 
 程序会自动将原始文件夹custom_chaos内的所有内容拷贝到custom_chaos_release中，并且对指定的Lua文件进行加密  
-发布版本的时候选择custom_chaos_release即可。
+发布版本前运行一下本程序， 然后选择custom_chaos_release发布即可。
 
-PS： 目前PASSWORD为硬编码。  可以使用 GetDedicatedServerKeyV2() 改为动态值，或者从服务器取，使得更加难以解密。
+PS： 目前PASSWORD为硬编码。  可以使用 GetDedicatedServerKeyV2() 改为动态值，或直接从服务器取，使得难以破解。
