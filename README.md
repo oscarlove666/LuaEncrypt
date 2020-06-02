@@ -2,7 +2,7 @@
 
 ### 使用方法
 1）新建一个Addon, 作为加密后的目标文件夹  
-   例如源文件 C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos
+   例如源文件 C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos  
    新建一个为 C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos_release   
 2）安装nodejs  
 3) 打开cmd控制台 进入目录 cd XXXXXX\LuaEncrypt\src  
