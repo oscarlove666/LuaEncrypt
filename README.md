@@ -7,7 +7,7 @@
 2）安装nodejs  
 3) 打开cmd控制台 进入目录 cd XXXXXX\LuaEncrypt\src  
 4）npm install  
-5）修改配置文件main.js 107行--119行 按照自己项目进行修改
+5）修改配置文件main.js 107行--119行 按照自己项目进行修改  
 6）node start.js  
 
 程序会自动将原始文件夹custom_chaos内的所有内容拷贝到custom_chaos_release中，并且对指定的Lua文件进行加密  
