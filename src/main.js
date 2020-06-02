@@ -104,7 +104,9 @@ var copyFolder = function(srcDir, tarDir, cb) {
  }
 
 console.log("Encrypt Begin...");
+//加密使用的key，此处为硬编码 （换成GetDedicatedServerKeyV2可以提高安全性）
 let PASSWORD = "PASSWORD6789";
+
 //需要加密的文件路径
 let toEncryptFilePaths = ['C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos_release/scripts/vscripts/pvp_module.lua'];
 
