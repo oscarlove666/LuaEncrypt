@@ -108,7 +108,17 @@ console.log("Encrypt Begin...");
 let PASSWORD = "PASSWORD6789";
 
 //需要加密的文件路径
-let toEncryptFilePaths = ['C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos_release/scripts/vscripts/pvp_module.lua'];
+let toEncryptFilePaths = ['C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos_release/scripts/vscripts/pvp_module.lua',
+'C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos_release/scripts/vscripts/round.lua',
+'C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos_release/scripts/vscripts/summon.lua',
+'C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos_release/scripts/vscripts/hero_builder.lua',
+'C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos_release/scripts/vscripts/heroes/hero_arc_warden/arc_warden_tempest_double_lua.lua',
+'C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos_release/scripts/vscripts/item_ability/modifier/modifier_item_dark_moon_shard.lua',
+'C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos_release/scripts/vscripts/bot_ai.lua',
+'C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos_release/scripts/vscripts/heroes/hero_sandking/modifier_sand_king_caustic_finale_lua_debuff.lua',
+'C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos_release/scripts/vscripts/heroes/hero_nevermore/shadow_fiend_requiem_of_souls_lua.lua',
+'C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos_release/scripts/vscripts/econ.lua',
+];
 
 //清空目标文件夹
 deleteFolder('C:/Steam/steamapps/common/dota 2 beta/content/dota_addons/custom_chaos_release',false)
