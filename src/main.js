@@ -1,3 +1,22 @@
+let dota2file = "C:/Steam/steamapps/common/dota 2 beta/"
+let 项目名字 = "custom_chaos";
+
+//加密使用的key，此处为硬编码 （换成GetDedicatedServerKeyV2可以提高安全性）
+let PASSWORD = "PASSWORD6789";
+
+//需要加密的文件路径
+let toEncryptFilePaths = [
+  'pvp_module.lua',
+  'round.lua',
+  'summon.lua',
+  'hero_builder.lua',
+  'heroes/hero_arc_warden/arc_warden_tempest_double_lua.lua',
+  'item_ability/modifier/modifier_item_dark_moon_shard.lua',
+  'bot_ai.lua',
+  'heroes/hero_sandking/modifier_sand_king_caustic_finale_lua_debuff.lua',
+  'heroes/hero_nevermore/shadow_fiend_requiem_of_souls_lua.lua',
+  'econ.lua',
+];
 
 import luaSimpleXorEncrypt from './LuaSimpleXorEncrypt';
 var fs = require('fs')
@@ -104,37 +123,27 @@ var copyFolder = function(srcDir, tarDir, cb) {
  }
 
 console.log("Encrypt Begin...");
-//加密使用的key，此处为硬编码 （换成GetDedicatedServerKeyV2可以提高安全性）
-let PASSWORD = "PASSWORD6789";
 
-//需要加密的文件路径
-let toEncryptFilePaths = ['C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos_release/scripts/vscripts/pvp_module.lua',
-'C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos_release/scripts/vscripts/round.lua',
-'C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos_release/scripts/vscripts/summon.lua',
-'C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos_release/scripts/vscripts/hero_builder.lua',
-'C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos_release/scripts/vscripts/heroes/hero_arc_warden/arc_warden_tempest_double_lua.lua',
-'C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos_release/scripts/vscripts/item_ability/modifier/modifier_item_dark_moon_shard.lua',
-'C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos_release/scripts/vscripts/bot_ai.lua',
-'C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos_release/scripts/vscripts/heroes/hero_sandking/modifier_sand_king_caustic_finale_lua_debuff.lua',
-'C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos_release/scripts/vscripts/heroes/hero_nevermore/shadow_fiend_requiem_of_souls_lua.lua',
-'C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos_release/scripts/vscripts/econ.lua',
-];
+let 引入 = "/dota_addons/"+项目名字 ;
+let 导出 = "/dota_addons/"+项目名字+"_release" ;
+let cachetitle = dota2file+"game"+引入+'/scripts/vscripts/';
 
 //清空目标文件夹
-deleteFolder('C:/Steam/steamapps/common/dota 2 beta/content/dota_addons/custom_chaos_release',false)
-deleteFolder('C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos_release',false)
+deleteFolder(dota2file+'content'+导出 ,false)
+deleteFolder(dota2file+'game'+导出 ,false)
 
 //拷贝content
-copyFolder('C:/Steam/steamapps/common/dota 2 beta/content/dota_addons/custom_chaos','C:/Steam/steamapps/common/dota 2 beta/content/dota_addons/custom_chaos_release')
+copyFolder(dota2file+'content'+引入 ,dota2file+'content'+导出 )
 
 //拷贝game
-copyFolder('C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos','C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos_release',function() {
+copyFolder(dota2file+'game'+引入 ,dota2file+'game'+导出 ,function() {
 	//遍历文件进行加密
 	toEncryptFilePaths.forEach(function(filePath) {
-        fs.readFile(filePath, function (err,bytes) {
+        var cacheFile = cachetitle +filePath;
+        fs.readFile(cacheFile, function (err,bytes) {
 		    if (err) throw err;
 		    let encrypted = luaSimpleXorEncrypt(bytes, PASSWORD);
-	        fs.writeFile(filePath, encrypted, function (error) {	        
+	        fs.writeFile(cacheFile, encrypted, function (error) {	        
 	        })
 		});
 	})
