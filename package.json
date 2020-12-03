@@ -1,0 +1,9 @@
+{
+    "name": "dota2_lua_encrypt_tool",
+    "description": "a tool for dota2 encrypt",
+    "devDependencies": {
+        "utf8": "^3.0.0",
+        "luamin": "^1.0.4",
+        "jsdom": "^16.2.2"
+    }
+}
