@@ -118,6 +118,7 @@ let toEncryptFilePaths = ['C:/Steam/steamapps/common/dota 2 beta/game/dota_addon
 'C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos_release/scripts/vscripts/heroes/hero_sandking/modifier_sand_king_caustic_finale_lua_debuff.lua',
 'C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos_release/scripts/vscripts/heroes/hero_nevermore/shadow_fiend_requiem_of_souls_lua.lua',
 'C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos_release/scripts/vscripts/econ.lua',
+'C:/Steam/steamapps/common/dota 2 beta/game/dota_addons/custom_chaos_release/scripts/vscripts/dota_mind.lua',
 ];
 
 //清空目标文件夹
